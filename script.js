@@ -11,7 +11,7 @@ function bestel(){
     else if(welke == "fris"){
         
         keuze = "fris";
-        prijsper = 1.9;
+        prijsper = 1.90;
         hoeveelheidbestel()
     }
     else if(welke == "bier"){
@@ -50,12 +50,15 @@ function hoeveelheidbestel(){
     }
     else{
         prijssubtotaal = prijsper*aantal;
+        prijssubtotaal = prijssubtotaal.toFixed(2);
         document.write(aantal + " " + keuze + " € " + prijssubtotaal + "<br>") 
+        prijssubtotaal = parseFloat(prijssubtotaal);
         prijstotaal = prijstotaal + prijssubtotaal;
         bestel()
     }
 }
 
 function stop(){
+    prijstotaal = prijstotaal.toFixed(2);
     document.write("<br>" + "Totaal:\n" + "€ " + prijstotaal)
 }
